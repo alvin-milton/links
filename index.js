@@ -1,7 +1,7 @@
 var links = {},
     parse;
 
-parse.links = function(host) {
+parse.getLinks = function(host) {
     var anchors = document.getElementsByTagName('a');
     for (var i = 0; i < anchors.length; i++) {
         if (anchors[i].href.indexOf(host) > -1) {

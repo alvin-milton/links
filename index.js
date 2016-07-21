@@ -1,19 +1,14 @@
 var links = {},
-    host = 'http://barkpost.dev';
+    parse;
 
-$('a').each(function() {
-
-    var href = $(this).attr('href');
-
-    if (href.indexOf(host) > -1 && href.indexOf('wp-') === -1) {
-
-        if (!links[$(this).attr('href')]) {
-
-            links[$(this).attr('href')] = $(this).attr('href');
-
-            console.log('matched', href);
-
+parse.links = function(host) {
+    var anchors = document.getElementsByTagName('a');
+    for (var i = 0; i < anchors.length; i++) {
+        if (anchors[i].href.indexOf(host) > -1) {
+             if (!links[anchors[i].href]) {
+                links[anchors[i].href] = anchors[i].href;
+                console.log('matched', anchors[i].href);
+            }
         }
-
     }
-});
+};

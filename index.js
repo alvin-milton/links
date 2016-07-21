@@ -1,5 +1,5 @@
 var links = {},
-    parse;
+    parse = new Object();
 
 parse.getLinks = function(host) {
     var anchors = document.getElementsByTagName('a');
